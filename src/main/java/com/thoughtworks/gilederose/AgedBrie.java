@@ -6,11 +6,12 @@ public class AgedBrie extends Commodity {
     super(sellin, quality);
   }
 
-  protected void updatedQualityBy(int passedDays) {
-    if (passedDays <= sellin) {
-      quality += passedDays;
+  protected void updateSellInAndQuality() {
+    if (sellin > 0) {
+      quality += 1;
     } else {
-      quality += 10 + (passedDays - sellin) * 2;
+      quality += 2;
     }
+    sellin-=1;
   }
 }

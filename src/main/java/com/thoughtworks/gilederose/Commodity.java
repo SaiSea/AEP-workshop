@@ -5,13 +5,13 @@ public abstract class Commodity {
 
   protected int quality;
 
-  public Commodity(int quality) {
-    this.quality = quality;
-  }
-
   public Commodity(int sellin, int quality) {
     this.sellin = sellin;
     this.quality = quality;
+  }
+
+  public int getSellin() {
+    return sellin;
   }
 
   public int getQuality() {
@@ -23,5 +23,5 @@ public abstract class Commodity {
     return quality;
   }
 
-  protected abstract void updatedQualityBy(int passedDays);
+  protected abstract void updateSellInAndQuality();
 }
