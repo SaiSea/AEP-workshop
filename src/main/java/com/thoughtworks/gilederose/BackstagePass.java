@@ -6,15 +6,16 @@ public class BackstagePass extends Commodity {
     super(sellin, quality);
   }
 
-  protected void updatedQualityBy(int passedDays) {
-    if (passedDays > sellin) {
+  protected void updateSellInAndQuality() {
+    if (sellin <= 0) {
       quality = 0;
-    } else if (passedDays > 15) {
-      quality += 20 + (passedDays - 15) * 3;
-    } else if (passedDays > 10) {
-      quality += 10 + (passedDays - 10) * 2;
+    } else if (sellin <= 5) {
+      quality += 3;
+    } else if (sellin <= 10) {
+      quality += 2;
     } else {
-      quality += passedDays;
+      quality += 1;
     }
+    sellin -= 1;
   }
 }
