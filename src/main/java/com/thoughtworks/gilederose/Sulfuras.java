@@ -2,10 +2,11 @@ package com.thoughtworks.gilederose;
 
 public class Sulfuras extends Commodity {
 
-  public Sulfuras(int quality) {
-    super(quality);
+
+  public Sulfuras(int sellin, int quality) {
+    super(sellin, quality);
   }
 
-  protected void updatedQualityBy(int passedDays) {
+  protected void updateSellInAndQuality() {
   }
 }
